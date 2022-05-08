@@ -137,14 +137,14 @@ margin-top: 40px;
   font-size: 20px;
 }
 
-/* #keyboard div:hover {
+#keyboard div:hover {
   position: relative;
   top: 1px;
   left: 1px;
   border-color: #e5e5e5;
   background-color: rgb(104, 184, 184);
   cursor: pointer;
-} */
+}
 
 .off {
   font-size: 20px;
