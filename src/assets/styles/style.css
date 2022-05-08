@@ -6,32 +6,10 @@ body {
   gap: 40px;
 }
 
-/* .section {
-  display: flex;
-  justify-content: center;
-  gap: 50px;
-  flex-direction: column;
-} */
-
 .section2 {
   display: flex;
   justify-content: center;
 }
-
-/* .ul {
-  display: flex;
-  flex-direction: row;
-  gap: 10px;
-  justify-content: center;
-  background-color: antiquewhite;
-} */
-
-/* .form {
-  width: calc(100% - 200px);
-  height: 200px;
-  margin: 40px;
-  background-color: blue;
-} */
 
 .help {
   width: 872px;
@@ -77,6 +55,20 @@ margin-top: 40px;
   border-radius: 5px;
 }
 
+#keyboard button {
+  float: left;
+  margin: 0 5px 5px 0;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  font-size: 20px;
+  text-align: center;
+  background: rgb(191, 243, 247);
+  border: 1px solid #f9f9f9;
+  border-radius: 5px;
+}
+
+
 .capslock,
 .tab,
 .left-shift {
@@ -121,7 +113,7 @@ margin-top: 40px;
 }
 
 #keyboard .space  {
-  width: 360px;
+  width: 372px;
 }
 
 #keyboard .left-ctrl  {
@@ -130,11 +122,6 @@ margin-top: 40px;
 
 #keyboard .but-right{
   width: 59px;
-}
-
-.on {
-  display: none;
-  font-size: 20px;
 }
 
 #keyboard div:hover {
@@ -146,8 +133,28 @@ margin-top: 40px;
   cursor: pointer;
 }
 
-.off {
+
+#keyboard button:hover {
+  position: relative;
+  top: 1px;
+  left: 1px;
+  border-color: #e5e5e5;
+  background-color: rgb(104, 184, 184);
+  cursor: pointer;
+}
+
+.symbol {
   font-size: 20px;
 }
 
+#keyboard .active {
+  border-radius: 20%;
+  background-color: rgb(118, 118, 204);
+}
+
+.anim {
+  transition: all 0.2s;
+  background-color:#94bbe9;
+  border-radius: 30%;
+}
 
