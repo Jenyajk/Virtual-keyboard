@@ -124,6 +124,9 @@ button:hover {
   border-radius: 20%;
   background-color: rgb(118, 118, 204);
 }
+.active:hover {
+  background-color: rgb(118, 118, 204);
+}
 
 .anim {
   transition: all 0.2s;

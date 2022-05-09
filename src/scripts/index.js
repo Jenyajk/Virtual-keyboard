@@ -18,7 +18,7 @@ const html = `<div id="container">
 <textarea id="textarea" rows="6" cols="60"></textarea>
 <div class="keyboard">
     <button class="symbol" data-key="Backquote">\`</button>
-    <button class="symbol" data-key="Digit1">1</button>
+    <button class="symbol" data-key="Digit1" code="Digit1">1</button>
     <button class="symbol" data-key="Digit2">2</button>
     <button class="symbol" data-key="Digit3">3</button>
     <button class="symbol" data-key="Digit4">4</button>
@@ -88,25 +88,18 @@ const html = `<div id="container">
 
 const body = document.body;
 body.innerHTML = html;
-const lett = document.querySelectorAll('.letter');
+const letter = document.querySelectorAll('.letter');
 const capslock1 = document.querySelector('.capslock');
 let number = document.querySelectorAll('.symbol');
 let display = document.getElementById('textarea');
 const backs = document.querySelector('.back');
-const t = document.querySelector('.tab');
-const sp = document.querySelector('.space');
+const tab = document.querySelector('.tab');
+const space = document.querySelector('.space');
 const sh = document.querySelector('.left-shift');
 let textarea = document.getElementById('textarea');
-let ctrl = document.querySelector('.left-ctrl');
-const alt = document.querySelector('.left-alt');
-
-
-
-
-window.addEventListener('keyup', (e) => {
-    console.log(e.code)
-})
-
+let button = document.querySelectorAll('.button');
+const enter = document.querySelector('.return');
+const backspace = document.querySelector('.back')
 
 let s2 = document.createElement('section');
 s2.className = 'section2';
@@ -117,61 +110,124 @@ info.className = 'help';
 info.textContent = 'The keyboard was created in the Windows operating system. To switch the language combination: ctrl + alt'
 s2.prepend(info); 
 
-
-
-backs.onclick = function () {
-    display.textContent = display.textContent.slice(0, -1)
+for (let n of number) {
+    n.onmousedown = function () {
+        n.classList.add('active')
+        display.textContent = display.textContent + n.textContent;
+    }
 }
-
-let key = document.querySelectorAll('.letter');
-for (let k of key) {
-    k.onclick = function () {
-        display.textContent = display.textContent + k.textContent;
+for (let n of number) {
+    n.onmouseup = function () {
+        n.classList.remove('active')
     }
 }
 
-
-for (let n of number) {
-    n.onclick = function () {
-        display.textContent = display.textContent + n.textContent;
+for (let key of letter) {
+    key.onmousedown = function () {
+        key.classList.add('active')
+        display.textContent = display.textContent + key.textContent;
+    }
+}
+for (let key of letter) {
+    key.onmouseup = function () {
+        key.classList.remove('active')
     }
 }
 
 capslock1.addEventListener( 'click', function () {
     if (capslock1.classList.toggle('active')) {    
-        lett.forEach((el) => {
+        letter.forEach((el) => {
 		el.textContent = el.textContent.toUpperCase()
 	});}
     else  {    
-        lett.forEach((el) => {
+        letter.forEach((el) => {
 		el.textContent = el.textContent.toLowerCase()
 	})}
 } );
 
 
-t.onclick = function () {
-    t.classList.toggle('anim');
+tab.onmousedown = function () {
+    tab.classList.toggle('anim');
     display.textContent += '    '
-}
+};
+tab.onmouseup = function () {
+    tab.classList.remove('anim');
+};
 
 
-sp.onclick = function () {
+enter.onmousedown = function () {
+    enter.classList.toggle('active');
+    display.textContent += '\n'
+};
+enter.onmouseup = function () {
+    enter.classList.remove('active');
+};
+
+space.onmousedown = function () {
+    space.classList.toggle('active');
     display.textContent += ' '
-}
+};
+space.onmouseup = function () {
+    space.classList.remove('active');
+};
+
+backspace.onmousedown = function () {
+    backspace.classList.toggle('active');
+    display.textContent = display.textContent.substring(0,display.textContent.length - 1)
+};
+backspace.onmouseup = function () {
+    backspace.classList.remove('active');
+};
 
 sh.addEventListener ('click', function () {
     if (sh.classList.toggle('active')) {    
-        lett.forEach((el) => {
+        letter.forEach((el) => {
 		el.textContent = el.textContent.toUpperCase()
 	});}
     else  {    
-        lett.forEach((el) => {
+        letter.forEach((el) => {
 		el.textContent = el.textContent.toLowerCase()
 	})};
 })
 
+
+
 body.addEventListener("keydown", (e)=>{
     e.preventDefault();
+    if ( document.querySelector('.left-alt').classList.contains('active') && document.querySelector('.left-ctrl').classList.contains('active')) {
+        console.log('pizda')
+    }
+    if ( e.code === 'ControlLeft') {
+        document.querySelector('.left-ctrl').classList.add('active');
+    }
+    if ( e.code === 'AltLeft') {
+        document.querySelector('.left-alt').classList.add('active');
+    }
+    if ( e.code === 'AltRight') {
+        document.querySelector('.right-alt').classList.add('active');
+    }
+    if ( e.key === 'Tab') {
+        textarea.value += '    ';
+        tab.classList.toggle('active');
+    }
+    if ( e.key === 'Enter') {
+        enter.classList.toggle('active');
+        textarea.value += '\n'
+    }
+    if ( e.key === 'CapsLock') {
+        if (capslock1.classList.toggle('active')) {    
+            letter.forEach((el) => {
+            el.textContent = el.textContent.toUpperCase()
+        });}
+        else  {    
+            letter.forEach((el) => {
+            el.textContent = el.textContent.toLowerCase()
+        })};
+    }
+    if ( e.key === 'Backspace') {
+        textarea.value = textarea.value.substring(0,textarea.value.length - 1)
+        backspace.classList.add('active')
+    }
     document.querySelectorAll('.letter').forEach(item=>{
         if(item.dataset.key === e.code){
             item.classList.add('active')
@@ -193,6 +249,24 @@ body.addEventListener("keydown", (e)=>{
 
 body.addEventListener("keyup", (e)=>{
     e.preventDefault();
+    if ( e.code === 'ControlLeft') {
+        document.querySelector('.left-ctrl').classList.remove('active');
+    }
+    if ( e.code === 'AltLeft') {
+        document.querySelector('.left-alt').classList.remove('active');
+    }
+    if ( e.code === 'AltRight') {
+        document.querySelector('.right-alt').classList.remove('active');
+    }
+    if ( e.key === 'Tab') {
+        tab.classList.remove('active');
+    }
+    if ( e.key === 'Enter') {
+        enter.classList.remove('active');
+    }
+    if ( e.key === 'Backspace') {
+        backspace.classList.remove('active')
+    }
     document.querySelectorAll('.letter').forEach(item=>{
         if(item.dataset.key === e.code){
             item.classList.remove('active')
@@ -231,4 +305,17 @@ body.addEventListener("keyup", (e)=>{
 });
 
 
+body.addEventListener("click", (e)=>{
+    const target = e.target;
+    button.forEach(item=>{
+        if(item == target){
+            textarea.value = textarea.value += item.textContent
+        }
+    });
+});
 
+
+
+body.addEventListener('keydown', (e) => {
+    console.log(e)
+})
