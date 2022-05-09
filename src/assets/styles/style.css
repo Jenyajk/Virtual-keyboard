@@ -15,20 +15,20 @@ body {
   width: 872px;
   height: 100px;
   background-color: rgb(179, 250, 241);
-  border: 1px solid ;
+  border: 1px solid;
   border-radius: 5px;
 }
 
 #container {
-margin: 0 auto;
-margin-top: 40px;
+  margin: 0 auto;
+  margin-top: 40px;
 
 }
 
 #textarea {
   margin: 0 auto 15px;
   padding: 5px;
-  width: 857px;
+  width: 830px;
   height: 200px;
   font: 1em/1.5 Verdana, Sans-Serif;
   background: rgb(201, 248, 246);
@@ -36,26 +36,13 @@ margin-top: 40px;
   border-radius: 5px;
 }
 
-#keyboard {
+.keyboard {
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
-#keyboard div {
-  float: left;
-  margin: 0 5px 5px 0;
-  width: 50px;
-  height: 50px;
-  line-height: 50px;
-  font-size: 20px;
-  text-align: center;
-  background: rgb(191, 243, 247);
-  border: 1px solid #f9f9f9;
-  border-radius: 5px;
-}
-
-#keyboard button {
+button {
   float: left;
   margin: 0 5px 5px 0;
   width: 50px;
@@ -75,66 +62,52 @@ margin-top: 40px;
   clear: left;
 }
 
-#keyboard .tab,
-#keyboard .delete {
+.tab,
+.delete {
   width: 60px;
 }
 
-#keyboard .capslock {
+.capslock {
   width: 120px;
 }
 
-#keyboard .back {
-  width: 128px;
+.back {
+  width: 125px;
 }
 
-#keyboard .return {
-  width: 115px;
+.return {
+  width: 110px;
 }
 
-#keyboard .left-shift {
+.left-shift {
   width: 120px;
 }
 
-#keyboard .right-shift {
-  width: 59px;
+.right-shift {
+  width: 55px;
 }
 
 .lastitem {
   margin-right: 0;
 }
 
-.uppercase {
-  text-transform: uppercase;
-}
-
-#keyboard .left-ctrl {
+.left-ctrl {
   clear: left;
 }
 
-#keyboard .space  {
-  width: 372px;
+.space {
+  width: 350px;
 }
 
-#keyboard .left-ctrl  {
+.left-ctrl {
   width: 95px;
 }
 
-#keyboard .but-right{
-  width: 59px;
+.but-right {
+  width: 55px;
 }
 
-#keyboard div:hover {
-  position: relative;
-  top: 1px;
-  left: 1px;
-  border-color: #e5e5e5;
-  background-color: rgb(104, 184, 184);
-  cursor: pointer;
-}
-
-
-#keyboard button:hover {
+button:hover {
   position: relative;
   top: 1px;
   left: 1px;
@@ -147,14 +120,13 @@ margin-top: 40px;
   font-size: 20px;
 }
 
-#keyboard .active {
+.active {
   border-radius: 20%;
   background-color: rgb(118, 118, 204);
 }
 
 .anim {
   transition: all 0.2s;
-  background-color:#94bbe9;
+  background-color: #94bbe9;
   border-radius: 30%;
 }
-

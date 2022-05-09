@@ -14,121 +14,129 @@ import keys from './alert';
 // createDiv(wrapper);
 import styles from '../assets/styles/style.css';
 
+const html = `<div id="container">
+<textarea id="textarea" rows="6" cols="60"></textarea>
+<div class="keyboard">
+    <button class="symbol" data-key="Backquote">\`</button>
+    <button class="symbol" data-key="Digit1">1</button>
+    <button class="symbol" data-key="Digit2">2</button>
+    <button class="symbol" data-key="Digit3">3</button>
+    <button class="symbol" data-key="Digit4">4</button>
+    <button class="symbol" data-key="Digit5">5</button>
+    <button class="symbol" data-key="Digit6">6</button>
+    <button class="symbol" data-key="Digit7">7</button>
+    <button class="symbol" data-key="Digit8">8</button>
+    <button class="symbol" data-key="Digit9">9</button>
+    <button class="symbol" data-key="Digit0">0</button>
+    <button class="symbol" data-key="Minus">-</button>
+    <button class="symbol" data-key="Equal">=</button>
+    <button class="back" data-key="Backspace">Backspace</button>
+    <button class="tab" data-key="Tab">Tab</button>
+    <button class="letter" data-key="KeyQ">q</button>
+    <button class="letter" data-key="KeyW">w</button>
+    <button class="letter" data-key="KeyE">e</button>
+    <button class="letter" data-key="KeyR">r</button>
+    <button class="letter" data-key="KeyT">t</button>
+    <button class="letter" data-key="KeyY">y</button>
+    <button class="letter" data-key="KeyU">u</button>
+    <button class="letter" data-key="KeyI">i</button>
+    <button class="letter" data-key="KeyO">o</button>
+    <button class="letter"data-key="KeyP">p</button>
+    <button class="symbol" data-key="BracketLeft">[</button>
+    <button class="symbol" data-key="BracketRight">]</button>
+    <button class="symbol " data-key="Backslash">\\</button>
+    <button class="delete lastitem" data-key="Delete">DEL</button>
+    <button class="capslock" data-key="CapsLock">Caps lock</button>
+    <button class="letter" data-key="KeyA" >a</button>
+    <button class="letter" data-key="KeyS">s</button>
+    <button class="letter" data-key="KeyD">d</button>
+    <button class="letter" data-key="KeyF">f</button>
+    <button class="letter" data-key="KeyG">g</button>
+    <button class="letter" data-key="KeyH">h</button>
+    <button class="letter" data-key="KeyJ">j</button>
+    <button class="letter" data-key="KeyK">k</button>
+    <button class="letter" data-key="KeyL">l</button>
+    <button class="symbol" data-key="Semicolon">;</button>
+    <button class="symbol" data-key="Quote">'</button>
+    <button class="return lastitem" data-key="Enter">ENTER</button>
+    <button class="left-shift" data-key="ShiftLeft">Shift</button>
+    <button class="symbol" data-key="Backslash">\\</button>
+    <button class="letter" data-key="KeyZ">z</button>
+    <button class="letter" data-key="KeyX">x</button>
+    <button class="letter" data-key="KeyC">c</button>
+    <button class="letter" data-key="KeyV">v</button>
+    <button class="letter" data-key="KeyB">b</button>
+    <button class="letter" data-key="KeyN">n</button>
+    <button class="letter" data-key="KeyM">m</button>
+    <button class="symbol" data-key="Comma">,</button>
+    <button class="symbol" data-key="Period">.</button>
+    <button class="symbol" data-key="Slash">/</button>
+    <button class="but-up" data-key="ArrowUp">▲</button>
+    <button class="right-shift lastitem" data-key="ShiftRight">Shift</button>
+    <button class="left-ctrl" data-key="ControlLeft">Ctrl</button>
+    <button class="fn" data-key="MetaLeft">Win</button>
+    <button class="left-alt" data-key="AltLeft">Alt</button>
+    <button class="space" data-key="Space">&nbsp;</button>
+    <button class="right-alt" data-key="AltRight">Alt</button>
+    <button class="right-ctrl" data-key="ControlRight">Ctrl</button>
+    <button class="but-left" data-key="ArrowLeft">◄</button>
+    <button class="but-down" data-key="ArrowDown">▼</button>
+    <button class="but-right" data-key="ArrowRight">►</button>
+</div>
+</div>`
+
+
 const body = document.body;
+body.innerHTML = html;
+const lett = document.querySelectorAll('.letter');
+const capslock1 = document.querySelector('.capslock');
+let number = document.querySelectorAll('.symbol');
+let display = document.getElementById('textarea');
+const backs = document.querySelector('.back');
+const t = document.querySelector('.tab');
+const sp = document.querySelector('.space');
+const sh = document.querySelector('.left-shift');
+let textarea = document.getElementById('textarea');
 let ctrl = document.querySelector('.left-ctrl');
 const alt = document.querySelector('.left-alt');
 
 
 
-window.addEventListener('click', (e) => {
-    console.log(e.target)
+
+window.addEventListener('keyup', (e) => {
+    console.log(e.code)
 })
 
-
-const html = `<div id="container">
-<textarea id="textarea" rows="6" cols="60"></textarea>
-<div id="keyboard">
-    <div class="symbol"><span class="off">\`</span></div>
-    <div class="symbol"><span class="off">1</span></div>
-    <div class="symbol"><span class="off">2</span></div>
-    <div class="symbol"><span class="off">3</span></div>
-    <div class="symbol"><span class="off">4</span></div>
-    <div class="symbol"><span class="off">5</span></div>
-    <div class="symbol"><span class="off">6</span></div>
-    <div class="symbol"><span class="off">7</span></div>
-    <div class="symbol"><span class="off">8</span></div>
-    <div class="symbol"><span class="off">9</span></div>
-    <div class="symbol"><span class="off">0</span></div>
-    <div class="symbol"><span class="off">-</span></div>
-    <div class="symbol"><span class="off">=</span></div>
-    <button class="back">Backspace</button>
-    <button class="tab">Tab</button>
-    <div class="letter">q</div>
-    <div class="letter">w</div>
-    <div class="letter">e</div>
-    <div class="letter">r</div>
-    <div class="letter">t</div>
-    <div class="letter">y</div>
-    <div class="letter">u</div>
-    <div class="letter">i</div>
-    <div class="letter">o</div>
-    <div class="letter">p</div>
-    <div class="symbol"><span class="off">[</span></div>
-    <div class="symbol"><span class="off">]</span></div>
-    <div class="symbol lastitem"><span class="off">\\</span></div>
-    <button class="delete lastitem">DEL</button>
-    <button class="capslock">Caps lock</button>
-    <div class="letter">a</div>
-    <div class="letter">s</div>
-    <div class="letter">d</div>
-    <div class="letter">f</div>
-    <div class="letter">g</div>
-    <div class="letter">h</div>
-    <div class="letter">j</div>
-    <div class="letter">k</div>
-    <div class="letter">l</div>
-    <div class="symbol"><span class="off">;</span></div>
-    <div class="symbol"><span class="off">'</span></div>
-    <button class="return lastitem">ENTER</button>
-    <button class="left-shift">Shift</button>
-    <div class="symbol">\\</div>
-    <div class="letter">z</div>
-    <div class="letter">x</div>
-    <div class="letter">c</div>
-    <div class="letter">v</div>
-    <div class="letter">b</div>
-    <div class="letter">n</div>
-    <div class="letter">m</div>
-    <div class="symbol"><span class="off">.</span></div>
-    <div class="symbol"><span class="off">,</span></div>
-    <div class="symbol"><span class="off">/</span></div>
-    <button class="but-up">▲</button>
-    <button class="right-shift lastitem">Shift</button>
-    <button class="left-ctrl">Ctrl</button>
-    <button class="fn">Win</button>
-    <button class="left-alt">Alt</button>
-    <button class="space lastitem">&nbsp;</button>
-    <button class="right-alt">Alt</button>
-    <button class="right-ctrl">Ctrl</button>
-    <button class="but-left">◄</button>
-    <button class="but-down">▼</button>
-    <button class="but-right">►</button>
-</div>
-</div>`
-
-body.innerHTML = html
 
 let s2 = document.createElement('section');
 s2.className = 'section2';
 document.body.append(s2);
 
-let div = document.createElement('div');
-div.className = 'help';
-s2.prepend(div); 
+let info = document.createElement('div');
+info.className = 'help';
+info.textContent = 'The keyboard was created in the Windows operating system. To switch the language combination: ctrl + alt'
+s2.prepend(info); 
 
-let display = document.getElementById('textarea');
-const backs = document.querySelector('.back');
+
 
 backs.onclick = function () {
     display.textContent = display.textContent.slice(0, -1)
 }
 
-let key = document.getElementById('keyboard').querySelectorAll('.letter');
+let key = document.querySelectorAll('.letter');
 for (let k of key) {
     k.onclick = function () {
         display.textContent = display.textContent + k.textContent;
     }
 }
 
-let number = document.querySelectorAll('.symbol');
+
 for (let n of number) {
     n.onclick = function () {
         display.textContent = display.textContent + n.textContent;
     }
 }
 
-const lett = document.querySelectorAll('.letter');
-const capslock1 = document.querySelector('.capslock');
 capslock1.addEventListener( 'click', function () {
     if (capslock1.classList.toggle('active')) {    
         lett.forEach((el) => {
@@ -140,13 +148,87 @@ capslock1.addEventListener( 'click', function () {
 	})}
 } );
 
-const t = document.querySelector('.tab');
+
 t.onclick = function () {
     t.classList.toggle('anim');
     display.textContent += '    '
 }
 
 
+sp.onclick = function () {
+    display.textContent += ' '
+}
+
+sh.addEventListener ('click', function () {
+    if (sh.classList.toggle('active')) {    
+        lett.forEach((el) => {
+		el.textContent = el.textContent.toUpperCase()
+	});}
+    else  {    
+        lett.forEach((el) => {
+		el.textContent = el.textContent.toLowerCase()
+	})};
+})
+
+body.addEventListener("keydown", (e)=>{
+    e.preventDefault();
+    document.querySelectorAll('.letter').forEach(item=>{
+        if(item.dataset.key === e.code){
+            item.classList.add('active')
+            textarea.value = textarea.value += e.key
+            // write(item.tag);
+            // if(item.tag.textContent === "ctrl"){
+            //     obj.ctrl = true;
+                
+            // }else if(item.tag.textContent == "Shift"){
+            //     if(!obj.shift){
+            //         obj.shift = true;
+            //         shiftActive();
+            //     }
+            // }
+        }
+        
+    });
+});
+
+body.addEventListener("keyup", (e)=>{
+    e.preventDefault();
+    document.querySelectorAll('.letter').forEach(item=>{
+        if(item.dataset.key === e.code){
+            item.classList.remove('active')
+            // write(item.tag);
+            // if(item.tag.textContent === "ctrl"){
+            //     obj.ctrl = true;
+                
+            // }else if(item.tag.textContent == "Shift"){
+            //     if(!obj.shift){
+            //         obj.shift = true;
+            //         shiftActive();
+            //     }
+            // }
+        }
+        
+    });
+});
+
+body.addEventListener("keydown", (e)=>{
+    e.preventDefault();
+    document.querySelectorAll('.symbol').forEach(item=>{
+        if(item.dataset.key === e.code){
+            item.classList.add('active')
+            textarea.value = textarea.value += e.key
+        }
+        
+    });
+});
+body.addEventListener("keyup", (e)=>{
+    e.preventDefault();
+    document.querySelectorAll('.symbol').forEach(item=>{
+        if(item.dataset.key === e.code){
+            item.classList.remove('active')
+        }
+    });
+});
 
 
 
