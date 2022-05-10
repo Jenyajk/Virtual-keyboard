@@ -99,19 +99,6 @@ info.className = 'help';
 info.textContent = 'The keyboard was created in the Windows operating system. To switch the language combination: ctrl + alt'
 s2.prepend(info);
 
-// shift.addEventListener('click', function () {
-//     if (shift.classList.toggle('active')) {
-//         letter.forEach((el) => {
-//             el.textContent = el.textContent.toUpperCase()
-//         });
-//     }
-//     else {
-//         letter.forEach((el) => {
-//             el.textContent = el.textContent.toLowerCase()
-//         })
-//     };
-// })
-
 body.addEventListener('mousedown', (e) => {
     e.preventDefault();
     if (e.target === capslock1) {
