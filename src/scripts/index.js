@@ -1,4 +1,4 @@
-import {lette} from './alert';
+import { lette } from './alert';
 import styles from '../assets/styles/style.css';
 
 
@@ -78,8 +78,6 @@ body.innerHTML = html;
 const letter = document.querySelectorAll('.letter');
 const capslock1 = document.querySelector('.capslock');
 const number = document.querySelectorAll('.symbol');
-let display = document.getElementById('textarea');
-const backs = document.querySelector('.back');
 const tab = document.querySelector('.tab');
 const space = document.querySelector('.space');
 const shift = document.querySelector('.left-shift');
@@ -113,6 +111,7 @@ body.addEventListener('mousedown', (e) => {
             })
         };
     }
+
     if (e.target === backspace) {
         backspace.classList.toggle('active');
         textarea.value = textarea.value.substring(0, textarea.value.length - 1)
@@ -295,12 +294,11 @@ function runOnKeys(func, ...codes) {
 }
 runOnKeys(
     () => {
-        lette.forEach( key => {
+        lette.forEach(key => {
             let lt = key.code;
-            but.forEach( item => {
+            but.forEach(item => {
                 let it = item.dataset.key
                 if (it === lt) {
-                    console.log('1234')
                     if (item.textContent === key.ru) {
                         item.textContent = key.eng
                     } else {
@@ -308,13 +306,49 @@ runOnKeys(
                     }
                 }
             })
-            })
+        })
     },
     "ControlLeft",
     "AltLeft"
 );
 
-body.addEventListener('keydown', (e) => {
-    console.log(e)
+shift.addEventListener('mousedown', (e) => {
+    e.preventDefault();
+    if (e.target === shift) {
+        shift.classList.toggle('active');
+        lette.forEach(key => {
+            let lt = key.code;
+            number.forEach(item => {
+                let it = item.dataset.key
+                if (it === lt) {
+                    if (item.textContent === key.ru) {
+                        item.textContent = key.shift
+                    } else {
+                        item.textContent = key.shift
+                    }
+                }
+            })
+        })
+    }
 })
 
+shift.addEventListener('mouseup', (e) => {
+    e.preventDefault();
+        shift.classList.remove('active');
+        lette.forEach(key => {
+            let lt = key.code;
+            number.forEach(item => {
+                let it = item.dataset.key
+                if (it === lt) {
+                    if (item.textContent === key.shift) {
+                        item.textContent = key.eng
+                    } else {
+                        item.textContent = key.ru
+                    }
+                }
+            })
+        })
+
+
+
+})
