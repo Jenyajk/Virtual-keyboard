@@ -48,7 +48,6 @@ let html = `<div id="container">
     <button class="symbol" data-key="Quote">'</button>
     <button class="return lastitem" data-key="Enter">ENTER</button>
     <button class="left-shift" data-key="ShiftLeft">Shift</button>
-    <button class="symbol" data-key="Backslash">\\</button>
     <button class="letter" data-key="KeyZ">z</button>
     <button class="letter" data-key="KeyX">x</button>
     <button class="letter" data-key="KeyC">c</button>
