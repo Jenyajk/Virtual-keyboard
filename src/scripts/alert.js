@@ -1,155 +1,97 @@
-// function createImg (url, container) {
-//     const img = document.createElement('img');
-//     img.className = 'img';
-//     img.alt = 'my phone';
-
-//     img.src = url;
-//     container.appendChild(img);
-// }
-
-// function createDiv ( container) {
-//     const div = document.createElement('div');
-//     div.className = 'div';
-//     const divChild = document.createElement('div');
-//     divChild.className = 'div-child';
-//     div.appendChild(divChild)
-
-//     container.appendChild(div);
-// }
-// export default {
-//     createDiv,
-//     createImg
-// }
-
-
-export const keys = [
+export const lette = [
     {
         "eng": "`",
         "ru": "ё",
         "shift": "~",
-        "keyCode": 192,
-        "code": "Backquote",
+        "code": "Backquote"
     },
     {
         "eng": "1",
         "ru": "1",
         "shift": "!",
-        "keyCode": 49,
-        "code": "Digit1",
-        "description": "1 Key",
+        "code": "Digit1"
     },
     {
         "eng": "2",
         "ru": "2",
         "shift": "@",
-        "keyCode": 50,
-        "which": 50,
-        "code": "Digit2",
-        "description": "2 Key",
+        "code": "Digit2"
     },
     {
         "eng": "3",
         "ru": "3",
         "shift": "#",
-        "keyCode": 51,
-        "which": 51,
-        "code": "Digit3",
-        "description": "3 Key",
+        "code": "Digit3"
     },
     {
         "eng": "4",
         "ru": "4",
         "shift": "$",
-        "keyCode": 52,
-        "which": 52,
-        "code": "Digit4",
-        "description": "4 Key",
+        "code": "Digit4"
     },
     {
         "eng": "5",
         "ru": "5",
         "shift": "%",
-        "keyCode": 53,
-        "which": 53,
-        "code": "Digit5",
-        "description": "5 Key",
+        "code": "Digit5"
     },
     {
         "eng": "6",
         "ru": "6",
         "shift": "^",
-        "keyCode": 54,
-        "which": 54,
-        "code": "Digit6",
-        "description": "6 Key",
+        "code": "Digit6"
     },
     {
         "eng": "7",
         "ru": "7",
         "shift": "&",
-        "keyCode": 55,
-        "which": 55,
-        "code": "Digit7",
-        "description": "7 Key",
+        "code": "Digit7"
     },
     {
         "eng": "8",
         "ru": "8",
         "shift": "*",
-        "keyCode": 56,
-        "which": 56,
-        "code": "Digit8",
-        "description": "8 Key",
+        "code": "Digit8"
     },
     {
         "eng": "9",
         "ru": "9",
         "shift": "(",
         "keyCode": 57,
-        "which": 57,
-        "code": "Digit9",
-        "description": "9 Key",
+        "code": "Digit9"
     },
     {
         "eng": "0",
         "ru": "0",
         "shift": ")",
         "keyCode": 48,
-        "which": 48,
-        "code": "Digit0",
-        "description": "0",
+        "code": "Digit0"
     },
     {
         "eng": "-",
         "ru": "-",
         "shift": "_",
         "keyCode": 109,
-        "which": 109,
-        "code": "NumpadSubtract",
-        "location": 3,
-        "description": "subtract"
+        "code": "NumpadSubtract"
     },
     {
         "eng": "=",
         "ru": "=",
         "shift": "+",
         "keyCode": 61,
-        "code": "Equal",
-        "description": "equals (firefox)"
+        "code": "Equal"
     },
     {
         "eng": "Backspace",
         "ru": "Backspace",
         "keyCode": 8,
-        "code": "Backspace",
-        "description": "backspace / delete",
+        "code": "Backspace"
     },
     {
         "eng": "Tab",
         "ru": "Tab",
         "keyCode": 9,
         "code": "Tab",
-        "description": "tab",
     },
     {
         "eng": "q",
@@ -226,46 +168,33 @@ export const keys = [
         "ru": "х",
         "shift": "{",
         "keyCode": 160,
-        "code": "BracketLeft",
-        "altKey": false,
-        "ctrlKey": false,
-        "metaKey": false,
-        "shiftKey": false,
-        "description": "^"
+        "code": "BracketLeft"
     },
     {
         "eng": "]",
         "ru": "ъ",
         "shift": "}",
         "keyCode": 221,
-        "code": "BracketRight",
-        "description": "close bracket / å"
+        "code": "BracketRight"
     },
     {
         "eng": "\\",
         "ru": "\\",
         "shift": "|",
         "keyCode": 220,
-        "code": "Backslash",
-        "description": "back slash"
+        "code": "Backslash"
     },
     {
         "eng": "Del",
         "ru": "Del",
         "keyCode": 46,
-        "code": "Delete",
-        "altKey": false,
-        "ctrlKey": false,
-        "metaKey": false,
-        "shiftKey": false,
-        "description": "delete",
+        "code": "Delete"
     },
     {
-        "eng": "CapsLock",
-        "ru": "CapsLock",
+        "eng": "Caps Lock",
+        "ru": "Caps Lock",
         "keyCode": 20,
-        "code": "CapsLock",
-        "description": "caps lock",
+        "code": "CapsLock"
     },
     {
         "eng": "a",
@@ -320,53 +249,39 @@ export const keys = [
         "eng": "k",
         "ru": "л",
         "keyCode": 75,
-        "code": "KeyK",
-        "altKey": true,
-        "ctrlKey": false,
-        "metaKey": true,
-        "shiftKey": false,
-        "description": "k"
+        "code": "KeyK"
     },
     {
         "eng": "l",
         "ru": "д",
         "keyCode": 76,
-        "code": "KeyL",
-        "altKey": true,
-        "ctrlKey": false,
-        "metaKey": true,
-        "shiftKey": false,
-        "description": "l"
+        "code": "KeyL"
     },
     {
         "eng": ";",
         "ru": "ж",
         "shift": ":",
         "keyCode": 59,
-        "code": "Semicolon",
-        "description": "semicolon (firefox), equals"
+        "code": "Semicolon"
     },
     {
         "eng": "'",
         "ru": "э",
         "shift": "\"",
         "keyCode": 222,
-        "code": "Quote",
-        "description": "single quote / ø / ä"
+        "code": "Quote"
     },
     {
         "eng": "Enter",
         "ru": "Enter",
         "keyCode": 13,
-        "code": "Enter",
-        "description": "Enter / Return",
+        "code": "Enter"
     },
     {
         "eng": "Shift",
         "ru": "Shift",
         "keyCode": 16,
-        "code": "ShiftLeft",
-        "description": "shift",
+        "code": "ShiftLeft"
     },
     {
         "eng": "z",
@@ -422,153 +337,85 @@ export const keys = [
         "ru": "б",
         "shift": "<",
         "keyCode": 108,
-        "code": "NumpadDecimal",
-        "location": 3,
-        "altKey": false,
-        "ctrlKey": false,
-        "metaKey": false,
-        "shiftKey": false,
-        "description": "numpad period (firefox)"
+        "code": "NumpadDecimal"
     },
     {
         "eng": ".",
         "ru": "ю",
         "shift": ">",
         "keyCode": 190,
-        "code": "Period",
-        "description": "period"
+        "code": "Period"
     },
     {
         "eng": "/",
         "ru": ".",
         "shift": "?",
-        "keyCode": 191,
-        "code": "Slash",
-        "description": "forward slash / ç"
+        "code": "Slash"
     },
     {
         "eng": "▲",
         "ru": "▲",
-        "keyCode": 38,
-        "code": "ArrowUp",
-        "altKey": false,
-        "ctrlKey": false,
-        "metaKey": false,
-        "shiftKey": false,
-        "repeat": false,
-        "description": "ArrowUp",
+        "code": "ArrowUp"
     },
     {
         "eng": "Shift",
         "ru": "Shift",
         "keyCode": 16,
-        "code": "ShiftRight",
-        "description": "Rshift",
-        "unicode": "⇧"
+        "code": "ShiftRight"
     },
     {
         "eng": "ctrl",
         "ru": "ctrl",
         "keyCode": 17,
-        "code": "ControlLeft",
-        "altKey": true,
-        "ctrlKey": false,
-        "metaKey": true,
-        "shiftKey": true,
-        "description": "Control",
+        "code": "ControlLeft"
     },
     {
-        "eng": "Window",
-        "ru": "Window",
+        "eng": "Win",
+        "ru": "Win",
         "keyCode": 91,
-        "code": "MetaLeft",
-        "altKey": false,
-        "ctrlKey": false,
-        "metaKey": true,
-        "shiftKey": false,
-        "description": "Windows",
+        "code": "MetaLeft"
     },
     {
         "eng": "Alt",
         "ru": "Alt",
         "keyCode": 18,
         "code": "AltLeft",
-        "altKey": true,
-        "ctrlKey": false,
-        "metaKey": true,
-        "shiftKey": false,
-        "description": "Alt",
     },
     {
         "eng": "Space",
         "ru": "Space",
         "keyCode": 32,
-        "code": "Space",
-        "altKey": false,
-        "ctrlKey": false,
-        "metaKey": false,
-        "shiftKey": false,
-        "repeat": false,
-        "description": "Space",
+        "code": "Space"
     },
     {
         "eng": "Alt",
         "ru": "Alt",
         "keyCode": 18,
-        "code": "AltRight",
-        "altKey": true,
-        "ctrlKey": false,
-        "metaKey": true,
-        "shiftKey": false,
-        "description": "Ralt",
+        "code": "AltRight"
     },
     {
         "eng": "◄",
         "ru": "◄",
         "keyCode": 37,
-        "code": "ArrowLeft",
-        "altKey": false,
-        "ctrlKey": false,
-        "metaKey": false,
-        "shiftKey": false,
-        "repeat": false,
-        "description": "ArrowLeft",
+        "code": "ArrowLeft"
     },
     {
         "eng": "▼",
         "ru": "▼",
         "keyCode": 40,
-        "code": "ArrowDown",
-        "altKey": false,
-        "ctrlKey": false,
-        "metaKey": false,
-        "shiftKey": false,
-        "repeat": false,
-        "description": "ArrowDown",
+        "code": "ArrowDown"
     },
     {
         "eng": "►",
         "ru": "►",
         "keyCode": 39,
-        "code": "ArrowRight",
-        "altKey": false,
-        "ctrlKey": false,
-        "metaKey": false,
-        "shiftKey": false,
-        "repeat": false,
-        "description": "ArrowRight",
+        "code": "ArrowRight"
     },
     {
         "eng": "ctrl",
         "ru": "ctrl",
         "keyCode": 17,
-        "code": "ControlRight",
-        "altKey": true,
-        "ctrlKey": false,
-        "metaKey": true,
-        "shiftKey": true,
-        "description": "Rctrl",
+        "code": "ControlRight"
     }
-];
 
-
+]

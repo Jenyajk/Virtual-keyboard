@@ -1,63 +1,63 @@
-import symbol from './alert';
+import {lette} from './alert';
 import styles from '../assets/styles/style.css';
 
 
 let html = `<div id="container">
 <textarea id="textarea" rows="6" cols="60"></textarea>
 <div class="keyboard">
-    <button class="symbol" data-key="Backquote">\`</button>
-    <button class="symbol" data-key="Digit1" code="Digit1">1</button>
-    <button class="symbol" data-key="Digit2">2</button>
-    <button class="symbol" data-key="Digit3">3</button>
-    <button class="symbol" data-key="Digit4">4</button>
-    <button class="symbol" data-key="Digit5">5</button>
-    <button class="symbol" data-key="Digit6">6</button>
-    <button class="symbol" data-key="Digit7">7</button>
-    <button class="symbol" data-key="Digit8">8</button>
-    <button class="symbol" data-key="Digit9">9</button>
-    <button class="symbol" data-key="Digit0">0</button>
-    <button class="symbol" data-key="Minus">-</button>
-    <button class="symbol" data-key="Equal">=</button>
+    <button class="symbol but" data-key="Backquote">\`</button>
+    <button class="symbol but" data-key="Digit1" code="Digit1">1</button>
+    <button class="symbol but" data-key="Digit2">2</button>
+    <button class="symbol but" data-key="Digit3">3</button>
+    <button class="symbol but" data-key="Digit4">4</button>
+    <button class="symbol but" data-key="Digit5">5</button>
+    <button class="symbol but" data-key="Digit6">6</button>
+    <button class="symbol but" data-key="Digit7">7</button>
+    <button class="symbol but" data-key="Digit8">8</button>
+    <button class="symbol but" data-key="Digit9">9</button>
+    <button class="symbol but" data-key="Digit0">0</button>
+    <button class="symbol but" data-key="Minus">-</button>
+    <button class="symbol but" data-key="Equal">=</button>
     <button class="back" data-key="Backspace">Backspace</button>
     <button class="tab" data-key="Tab">Tab</button>
-    <button class="letter" data-key="KeyQ">q</button>
-    <button class="letter" data-key="KeyW">w</button>
-    <button class="letter" data-key="KeyE">e</button>
-    <button class="letter" data-key="KeyR">r</button>
-    <button class="letter" data-key="KeyT">t</button>
-    <button class="letter" data-key="KeyY">y</button>
-    <button class="letter" data-key="KeyU">u</button>
-    <button class="letter" data-key="KeyI">i</button>
-    <button class="letter" data-key="KeyO">o</button>
-    <button class="letter"data-key="KeyP">p</button>
-    <button class="symbol" data-key="BracketLeft">[</button>
-    <button class="symbol" data-key="BracketRight">]</button>
-    <button class="symbol " data-key="Backslash">\\</button>
+    <button class="letter but" data-key="KeyQ">q</button>
+    <button class="letter but" data-key="KeyW">w</button>
+    <button class="letter but" data-key="KeyE">e</button>
+    <button class="letter but" data-key="KeyR">r</button>
+    <button class="letter but" data-key="KeyT">t</button>
+    <button class="letter but" data-key="KeyY">y</button>
+    <button class="letter but" data-key="KeyU">u</button>
+    <button class="letter but" data-key="KeyI">i</button>
+    <button class="letter but" data-key="KeyO">o</button>
+    <button class="letter but"data-key="KeyP">p</button>
+    <button class="symbol but" data-key="BracketLeft">[</button>
+    <button class="symbol but" data-key="BracketRight">]</button>
+    <button class="symbol but" data-key="Backslash">\\</button>
     <button class="delete lastitem" data-key="Delete">DEL</button>
     <button class="capslock" data-key="CapsLock">Caps lock</button>
-    <button class="letter" data-key="KeyA" >a</button>
-    <button class="letter" data-key="KeyS">s</button>
-    <button class="letter" data-key="KeyD">d</button>
-    <button class="letter" data-key="KeyF">f</button>
-    <button class="letter" data-key="KeyG">g</button>
-    <button class="letter" data-key="KeyH">h</button>
-    <button class="letter" data-key="KeyJ">j</button>
-    <button class="letter" data-key="KeyK">k</button>
-    <button class="letter" data-key="KeyL">l</button>
-    <button class="symbol" data-key="Semicolon">;</button>
-    <button class="symbol" data-key="Quote">'</button>
+    <button class="letter but" data-key="KeyA" >a</button>
+    <button class="letter but" data-key="KeyS">s</button>
+    <button class="letter but" data-key="KeyD">d</button>
+    <button class="letter but" data-key="KeyF">f</button>
+    <button class="letter but" data-key="KeyG">g</button>
+    <button class="letter but" data-key="KeyH">h</button>
+    <button class="letter but" data-key="KeyJ">j</button>
+    <button class="letter but" data-key="KeyK">k</button>
+    <button class="letter but" data-key="KeyL">l</button>
+    <button class="symbol but" data-key="Semicolon">;</button>
+    <button class="symbol but" data-key="Quote">'</button>
     <button class="return lastitem" data-key="Enter">ENTER</button>
     <button class="left-shift" data-key="ShiftLeft">Shift</button>
-    <button class="letter" data-key="KeyZ">z</button>
-    <button class="letter" data-key="KeyX">x</button>
-    <button class="letter" data-key="KeyC">c</button>
-    <button class="letter" data-key="KeyV">v</button>
-    <button class="letter" data-key="KeyB">b</button>
-    <button class="letter" data-key="KeyN">n</button>
-    <button class="letter" data-key="KeyM">m</button>
-    <button class="symbol" data-key="Comma">,</button>
-    <button class="symbol" data-key="Period">.</button>
-    <button class="symbol" data-key="Slash">/</button>
+    <button class="letter but" data-key="KeyZ">z</button>
+    <button class="letter but" data-key="KeyX">x</button>
+    <button class="letter but" data-key="KeyC">c</button>
+    <button class="letter but" data-key="KeyV">v</button>
+    <button class="letter but" data-key="KeyB">b</button>
+    <button class="letter but" data-key="KeyN">n</button>
+    <button class="letter but" data-key="KeyM">m</button>
+    <button class="symbol but" data-key="NumpadDecimal">,</button>
+    <button class="symbol but" data-key="Period">.</button>
+    <button class="symbol but" data-key="Slash">/</button>
     <button class="but-up" data-key="ArrowUp">▲</button>
     <button class="right-shift lastitem" data-key="ShiftRight">Shift</button>
     <button class="left-ctrl" data-key="ControlLeft">Ctrl</button>
@@ -87,7 +87,8 @@ let textarea = document.getElementById('textarea');
 let button = document.querySelectorAll('.button');
 const enter = document.querySelector('.return');
 const backspace = document.querySelector('.back');
-const del = document.querySelector('.delete')
+const del = document.querySelector('.delete');
+const but = document.querySelectorAll('.but');
 
 let s2 = document.createElement('section');
 s2.className = 'section2';
@@ -294,7 +295,20 @@ function runOnKeys(func, ...codes) {
 }
 runOnKeys(
     () => {
-        return console.log(arr1)
+        lette.forEach( key => {
+            let lt = key.code;
+            but.forEach( item => {
+                let it = item.dataset.key
+                if (it === lt) {
+                    console.log('1234')
+                    if (item.textContent === key.ru) {
+                        item.textContent = key.eng
+                    } else {
+                        item.textContent = key.ru
+                    }
+                }
+            })
+            })
     },
     "ControlLeft",
     "AltLeft"
@@ -303,3 +317,4 @@ runOnKeys(
 body.addEventListener('keydown', (e) => {
     console.log(e)
 })
+
